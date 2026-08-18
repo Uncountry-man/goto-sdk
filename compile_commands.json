@@ -1,0 +1,77 @@
+[
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c src/value.cpp -o build/value.o",
+    "file": "src/value.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c src/token.cpp -o build/token.o",
+    "file": "src/token.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c src/lexer.cpp -o build/lexer.o",
+    "file": "src/lexer.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c src/ast.cpp -o build/ast.o",
+    "file": "src/ast.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c src/parser.cpp -o build/parser.o",
+    "file": "src/parser.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c src/environment.cpp -o build/environment.o",
+    "file": "src/environment.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c src/interpreter.cpp -o build/interpreter.o",
+    "file": "src/interpreter.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c src/sdk.cpp -o build/sdk.o",
+    "file": "src/sdk.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c src/main.cpp -o build/main.o",
+    "file": "src/main.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c tests/test_main.cpp -o build/test_main.o",
+    "file": "tests/test_main.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c tests/test_lexer.cpp -o build/test_lexer.o",
+    "file": "tests/test_lexer.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c tests/test_parser.cpp -o build/test_parser.o",
+    "file": "tests/test_parser.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c tests/test_values.cpp -o build/test_values.o",
+    "file": "tests/test_values.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c tests/test_control_flow.cpp -o build/test_control_flow.o",
+    "file": "tests/test_control_flow.cpp"
+  },
+  {
+    "directory": "C:/Users/neto/Desktop/SDK_GoTo",
+    "command": "clang++ -std=c++20 -Iinclude -c tests/test_narrative.cpp -o build/test_narrative.o",
+    "file": "tests/test_narrative.cpp"
+  }
+]

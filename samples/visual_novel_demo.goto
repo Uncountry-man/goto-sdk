@@ -1,0 +1,80 @@
+# ==========================================
+# Exemplo Visual Novel: As Crônicas de GoTo
+# ==========================================
+
+# Inicialização de variáveis e estado
+let player_name = "Aventureiro"
+let gold = 50
+let affinity_alice = 0
+let inventory = ["poção", "mapa"]
+
+label inicio
+scene "quarto_estalagem" fade
+play music "tema_tranquilo.ogg"
+
+show alice happy center
+say alice "Bom dia, " + player_name + "! Você finalmente acordou."
+
+say alice "Temos um longo caminho até o Castelo de Cristal hoje."
+
+choice
+    option "Perguntar sobre a rota da floresta" goto rota_floresta
+    option "Checar seus pertences e ouro" goto checar_inventario
+    option "Descansar mais um pouco"
+        say alice "Não temos tempo para preguiça agora!"
+        goto rota_floresta
+end
+
+label checar_inventario
+scene "quarto_estalagem"
+say "Você verifica sua mochila."
+say "Ouro atual: " + str(gold) + " moedas."
+say "Itens na mochila: " + str(inventory)
+
+say alice "Tudo pronto agora?"
+goto rota_floresta
+
+label rota_floresta
+scene "floresta_antiga" fade
+play music "vento_misterioso.ogg"
+show alice neutral left
+
+say alice "Esta é a Floresta Sussurrante. Fique atento."
+
+let monstro_derrotado = false
+let escolha_combate = 1
+
+if gold >= 50
+    say alice "Que bom que viemos preparados com mantimentos."
+    affinity_alice += 10
+end
+
+say alice "Veja! Há uma bifurcação adiante."
+
+choice
+    option "Ir pela trilha iluminada pelo sol" goto trilha_luz
+    option "Investigar a caverna escura" goto caverna_sombria
+end
+
+label trilha_luz
+scene "trilha_solar"
+show alice happy center
+say alice "A luz do sol é revigorante! Chegamos em segurança aos portões do reino."
+say "Parabéns, você completou a demonstração da linguagem GoTo!"
+goto fim
+
+label caverna_sombria
+scene "caverna_profunda"
+show alice surprised center
+say alice "Cuidado! Ouço passos no escuro..."
+say "Um pequeno dragão bebê surge e rouba 10 moedas de ouro!"
+gold -= 10
+say "Ouro restante: " + str(gold)
+say alice "Pelo menos estamos todos bem. Vamos continuar rápido!"
+goto fim
+
+label fim
+scene "castelo_cristal" fade
+show alice happy center
+say alice "Obrigada por viajar comigo, " + player_name + "!"
+say "--- Fim da Demonstração ---"

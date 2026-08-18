@@ -1,0 +1,45 @@
+# ==========================================
+# Exemplo GoTo: Lógica de Jogo, Funções e Listas/Dicionários
+# ==========================================
+
+fn criar_personagem(nome, classe, hp_inicial)
+    return {
+        "nome": nome,
+        "classe": classe,
+        "hp": hp_inicial,
+        "max_hp": hp_inicial,
+        "inventario": ["pocao_vida", "espada_madeira"]
+    }
+end
+
+fn causar_dano(alvo, dano)
+    alvo["hp"] -= dano
+    if alvo["hp"] < 0
+        alvo["hp"] = 0
+    end
+    println("-> " + alvo["nome"] + " sofreu " + str(dano) + " de dano! HP restante: " + str(alvo["hp"]))
+end
+
+println("=== Criando Jogador e Inimigo ===")
+let player = criar_personagem("Guerreiro", "Knight", 100)
+let slime = criar_personagem("Slime Verde", "Monstro", 30)
+
+println("Jogador: " + str(player))
+println("Monstro: " + str(slime))
+
+println("\n=== Iniciando Batalha ===")
+let turno = 1
+while slime["hp"] > 0 and player["hp"] > 0
+    println("\n--- Turno " + str(turno) + " ---")
+    causar_dano(slime, 12)
+    if slime["hp"] > 0
+        causar_dano(player, 5)
+    end
+    turno += 1
+end
+
+if slime["hp"] == 0
+    println("\n[VITORIA] Você derrotou o " + slime["nome"] + "!")
+    push(player["inventario"], "gosma_verde")
+    println("Novo inventário: " + str(player["inventario"]))
+end
